@@ -167,21 +167,22 @@ include(get_template_directory() . "/inc/widgets/widget-social.php");
  */
 function dazzling_scripts() {
 
-  wp_enqueue_style( 'dazzling-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
+  wp_enqueue_style( 'dazzling-bootstrap', get_template_directory_uri() . '/components/bootstrap/dist/css/bootstrap.min.css' );
 
-  wp_enqueue_style( 'dazzling-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
+  wp_enqueue_style( 'dazzling-icons', get_template_directory_uri().'/components/font-awesome/css/font-awesome.min.css' );
 
   if( ( is_home() || is_front_page() ) && of_get_option('dazzling_slider_checkbox') == 1 ) {
     wp_enqueue_style( 'flexslider-css', get_template_directory_uri().'/inc/css/flexslider.css' );
   }
 
+/*
   if ( class_exists( 'jigoshop' ) ) { // Jigoshop specific styles loaded only when plugin is installed
     wp_enqueue_style( 'jigoshop-css', get_template_directory_uri().'/inc/css/jigoshop.css' );
   }
-
+*/
   wp_enqueue_style( 'dazzling-style', get_stylesheet_uri() );
 
-  wp_enqueue_script('dazzling-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
+  wp_enqueue_script('dazzling-bootstrapjs', get_template_directory_uri().'/components/bootstrap/dist/js/bootstrap.min.js', array('jquery') );
 
   if( ( is_home() || is_front_page() ) && of_get_option('dazzling_slider_checkbox') == 1 ) {
     wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/inc/js/flexslider.min.js', array('jquery'), '2.5.0', true );
